@@ -1,16 +1,29 @@
 print("Hello World")
 
 codeStateTab = ["FR", "UK", "DE", "IT", "ES"]
-tvaValueTab = [20, 15, 19, 7, 10]
+tvaValueTab = ["20", "15", "19", "07", "10"]
+i = 0 
 
+print(codeStateTab.index('FR'))
+
+print("-----------")
+print("|Pays| TVA |")
+print("-----------")
 for elements in codeStateTab:
-    print(elements)
+    print("|", elements, "|", tvaValueTab[i], "|")
+    print ("-----------")
+    i += 1
 
-print ("--------------")
-montantHT = input("Saississez un montant H.T. \n")
-print ("--------------")
-montantTVA = input("Saississez un montant de TVA \n")
+montantHT = input("Saisissez un montant H.T. \n")
+print("--------------")
+codePays = input("Saisissez le code Pays \n")
 
-montantTTC = int(montantHT) + int(montantTVA)
-print ("--------------")
-print("Le montant TTC est égale à", montantTTC)
+paysValue = codeStateTab.index(codePays)
+montantTVA = tvaValueTab[paysValue]
+print(montantTVA)
+montantTVA = float(montantTVA) / 100
+montantTVA = float(montantHT) * float(montantTVA)
+montantTTC = float(montantHT) + float(montantTVA)
+
+print("--------------")
+print("Le montant TTC est égal à", montantTTC)
