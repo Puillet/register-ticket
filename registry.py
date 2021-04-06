@@ -4,8 +4,6 @@ codeStateTab = ["FR", "UK", "DE", "IT", "ES"]
 tvaValueTab = ["20", "15", "19", "07", "10"]
 i = 0 
 
-print(codeStateTab.index('FR'))
-
 print("-----------")
 print("|Pays| TVA |")
 print("-----------")
@@ -20,7 +18,8 @@ codePays = input("Saisissez le code Pays \n")
 
 paysValue = codeStateTab.index(codePays)
 montantTVA = tvaValueTab[paysValue]
-print(montantTVA)
+
+
 montantTVA = float(montantTVA) / 100
 montantTVA = float(montantHT) * float(montantTVA)
 montantTTC = float(montantHT) + float(montantTVA)
